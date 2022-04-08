@@ -2,8 +2,8 @@
 # Setup
 # ------------------------------------------------
 # Please download and install:
-#   - R 4.1.1
-#   - RStudio Desktop 2021.09.1+372
+#   - R 4.1.3
+#   - RStudio Desktop 2022.02.1 Build 461
 
 # ------------------------------------------------
 # Packages to Install
@@ -79,7 +79,10 @@ CR_dat <-
            bathroom, refrig, no_elect, no_toilet, comp, dep_rate,
            tv, mobile, num_hh, urban, mean_educ, num_children, num_adults,
            num_elderly, disabled, mar_stat) %>% 
-    drop_na()
+    drop_na() %>% 
+  as_tibble()
 
 rm(test)
 rm(train)
+
+# write_rds(CR_dat,file = "datasets/CR_dat.rds")

@@ -3,7 +3,10 @@
 # ------------------------------------------------
 library('tidyverse')
 
-source('code/1_data_prep.r')
+source('code/0_data_prep.r')
+
+# if the above fails try uncommenting the line directly below
+# CR_dat <- read_rds(file = "datasets/CR_dat.rds")
 
 
 # ------------------------------------------------
@@ -12,17 +15,9 @@ source('code/1_data_prep.r')
 # let's summarize the IDB poverty data using the glimpse function
 
 summary(CR_dat)
-write.csv(sum(glimpse(CR_dat)))
-
-# from https://www.kaggle.com/c/costa-rican-household-poverty-prediction/data?select=codebook.csv
-
-# write.csv(sum(glimpse(CR_dat)))
-
-# CR_dat %>% glimpse() %>% sum() %>% write.csv()
-
 glimpse(CR_dat)
 
-CR_dat %>% glimpse()
+# from https://www.kaggle.com/c/costa-rican-household-poverty-prediction/data?select=codebook.csv
 
 # ------------------------------------------------
 # Pipe Operator!  
@@ -115,8 +110,9 @@ CR_dat_v2 <-
 
 library('janitor')
 CR_dat_v2 <- 
-  CR_dat_v2 %>% clean_names()
+  CR_dat_v2 %>% clean_names() 
 
+CR_dat %>% names()
 
 # note we must pass the DF back to the original data
 CR_dat <- CR_dat %>% 
