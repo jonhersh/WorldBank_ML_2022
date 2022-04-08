@@ -62,7 +62,7 @@ If you have never used Github, don't worry. It's easy! To download the files in 
 3. You may also download the files individually, or copy and paste code as needed. 
 4. Use [git2r](https://github.com/ropensci/git2r) to clone the repo directly.  
 
-### Loading Project in R
+### Loading The Github Repo in rstudio.cloud
 
 ```
 install.packages('usethis')
