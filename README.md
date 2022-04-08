@@ -3,7 +3,7 @@
 
 
 #### April 8, 14, and 15
-#### Instructor: Jonathan Hersh (hersh@chapman.edu) [website](https://jonathan-hersh.com)
+#### Instructor: [Jonathan Hersh](https://jonathan-hersh.com) (hersh@chapman.edu) 
 
 
 ## Getting Started
@@ -55,7 +55,12 @@ If you cannot install those programs, please head over to [rstudio.cloud](https:
 
 ### Using Github
 
-If you have never used Github, don't worry. You can either clone the repository, or you may click the "Code" button on the main page, and then "Download Zip" to download all the files. You may also download the files individually, or copy and paste code as needed. 
+If you have never used Github, don't worry. It's easy! To download the files in this repository to your computer, please do one of the following. 
+
+1. Download github and create a username. Navigate to the top of this repo and click 'clone'. This will copy all of the files to your computer. 
+2. Click the "Code" button on the main page, and then "Download Zip" to download all the files in this repo as a zip. 
+3. You may also download the files individually, or copy and paste code as needed. 
+4. Use [git2r](https://github.com/ropensci/git2r) to clone the repo directly.  
 
 ### Loading Project in R
 
