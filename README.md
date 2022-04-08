@@ -67,3 +67,8 @@ If you have never used Github, don't worry. It's easy! To download the files in 
 ```
 install.packages('usethis')
 install.packages('tidyverse')
+
+newProject <- usethis::use_course('https://github.com/jonhersh/WorldBank_ML_2022/archive/refs/heads/main.zip')
+
+
+
