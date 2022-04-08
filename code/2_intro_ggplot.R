@@ -2,10 +2,11 @@
 # Load packages and data prep
 # ------------------------------------------------
 library('tidyverse')
+library('ggthemes')
 
 # load data if not already loaded
 
-CR_dat <- read_csv("https://raw.githubusercontent.com/jonhersh/ML_Central_Bank_Belize_2/main/datasets/CR_dat.csv")
+CR_dat <- read_rds("https://github.com/jonhersh/WorldBank_ML_2022/raw/main/datasets/CR_dat.rds")
 
 
 
@@ -24,7 +25,7 @@ ggplot(CR_dat, aes(x = num_hh)) +
   ylab("Freqency") +
   ggtitle("My plot")
 
-ggsave("frequency_num_hh.png")
+ggsave("figures/frequency_num_hh.png")
 
 # change color of bar based on some other characteristic of
 # the data
@@ -68,9 +69,24 @@ ggplot(CR_dat, aes(x = age, y = mean_educ)) +
 
 # change to a linear line
 # we can change the color of the points
-ggplot(CR_dat, aes(x = age, y = mean_educ)) +
+# note we have saved this object as p and not plotted it
+p <- ggplot(CR_dat, aes(x = age, y = mean_educ)) +
   geom_point(aes(color = mar_stat), alpha = 1/10) + 
   geom_smooth(method = "lm")
+
+# change the axes labels
+p <- p +
+  xlab("Age of Head of Household") + 
+  ylab("Years of Education") 
+
+plot(p)
+
+# change to the minimal theme and increase the font size
+# see more themes here: http://jrnold.github.io/ggthemes/index.html
+p <- p + 
+  theme_minimal(base_size = 16)
+
+plot(p)
 
 
 # ------------------------------------------------
@@ -91,6 +107,16 @@ ggplot(CR_dat, aes(x = age, y = mean_educ)) +
   geom_smooth(method = "lm") +
   facet_wrap(~ urban)
 
+# ------------------------------------------------
+# Create interactive plots with plotly
+# ------------------------------------------------
+library('plotly')
+# make an interactive plot using plotly
+p <- ggplotly(p)
+
+# even better we can save this as an html file! 
+htmlwidgets::saveWidget(p, file = "figures/myployly.html")
+
 
 # ------------------------------------------------
 # Exercises
@@ -107,5 +133,11 @@ ggplot(CR_dat, aes(x = age, y = mean_educ)) +
 
 # 3. Create a scatter plot of age against mean education
 #    faceted by urban. Include a linear smoothing line 
+
+
+# 4. Add axes labels and a theme of your choice using the ggthemes package
+
+
+# 5. Save the figure as either a plotly or a png object
 
 

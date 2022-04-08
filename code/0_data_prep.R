@@ -28,7 +28,9 @@ packages <- c(
     'plotROC',
     'randomForestExplainer',
     'caret',
-    'tidymodels'
+    'tidymodels',
+    'plotly',
+    'ggthemes'
 )
 
 # install.packages(packages)
@@ -78,7 +80,7 @@ CR_dat <-
     select(household_ID,poor_stat,num_rooms,
            bathroom, refrig, no_elect, no_toilet, comp, dep_rate,
            tv, mobile, num_hh, urban, mean_educ, num_children, num_adults,
-           num_elderly, disabled, mar_stat) %>% 
+           num_elderly, disabled, mar_stat, age) %>% 
     drop_na() %>% 
   as_tibble()
 
