@@ -8,7 +8,7 @@
 # ------------------------------------------------
 # Packages to Install
 # ------------------------------------------------
-packages <- c(
+package_list <- c(
     'ggthemes', 
     'glmnet', 
     'here', 
@@ -20,7 +20,7 @@ packages <- c(
     'tidyverse', 
     'usethis', 
     'UsingR', 
-    'randomForests',
+    'randomForest',
     'glmnetUtils',
     'GGally',
     'partykit',
@@ -30,10 +30,12 @@ packages <- c(
     'caret',
     'tidymodels',
     'plotly',
-    'ggthemes'
+    'ggthemes',
+    'here'
 )
 
-# install.packages(packages)
+install.packages('pacman')
+pacman::p_load(package_list, character.only = TRUE)
 
 
 # ------------------------------------------------
