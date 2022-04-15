@@ -2,7 +2,7 @@
 # Load data and packages
 #------------------------------------------------------------
 library(partykit)
-library(tidyverse)
+library(dplyr)
 library(rpart)       
 
 # uncomment and run if the CR_dat dataset is not loaded
@@ -119,23 +119,23 @@ plot_predict_interaction(rf_fit, CR_train, "mean_educ",
 #---------------------------------------------------------------
 # Cross-validate to select optimal mtry 
 #---------------------------------------------------------------
-library('caret')
-
-rf_caret <-
-    train(poor_stat ~ urban + num_children + comp + no_toilet
-                      + dep_rate + mobile + mean_educ,
-          CR_train %>%  
-              select(-household_ID) %>% 
-              mutate(poor_stat = 
-                         as.factor(poor_stat)),
-          method = "rf",
-          metric = "Accuracy",
-          tuneLength = 10,
-          trControl = trainControl(method = "cv", 
-                                   number = 5, 
-                                   verbose = TRUE))
-
-plot(rf_caret)
+# library('caret')
+# 
+# rf_caret <-
+#     train(poor_stat ~ urban + num_children + comp + no_toilet
+#                       + dep_rate + mobile + mean_educ,
+#           CR_train %>%  
+#               select(-household_ID) %>% 
+#               mutate(poor_stat = 
+#                          as.factor(poor_stat)),
+#           method = "rf",
+#           metric = "Accuracy",
+#           tuneLength = 10,
+#           trControl = trainControl(method = "cv", 
+#                                    number = 5, 
+#                                    verbose = TRUE))
+# 
+# plot(rf_caret)
 
 
 #---------------------------------------------------------------

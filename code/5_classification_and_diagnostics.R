@@ -1,8 +1,7 @@
 # ------------------------------------------------
 # load packages and data
 # ------------------------------------------------
-library('tidyverse')
-library('tidymodels')
+library('dplyr')
 library('rsample')
 library('plotROC')
 

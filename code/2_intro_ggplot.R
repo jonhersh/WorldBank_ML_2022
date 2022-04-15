@@ -1,7 +1,8 @@
 # ------------------------------------------------
 # Load packages and data prep
 # ------------------------------------------------
-library('tidyverse')
+library('dplyr')
+library('ggplot2')
 library('ggthemes')
 
 # load data if not already loaded

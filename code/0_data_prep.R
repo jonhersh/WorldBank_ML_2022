@@ -16,7 +16,6 @@ package_list <- c(
     'rmarkdown', 
     'rprojroot', 
     'threejs', 
-    'tidymodels', 
     'tidyverse', 
     'usethis', 
     'UsingR', 
@@ -27,21 +26,19 @@ package_list <- c(
     'rpart',
     'plotROC',
     'randomForestExplainer',
-    'caret',
-    'tidymodels',
     'plotly',
     'ggthemes',
     'here'
 )
 
-install.packages('pacman')
+# install.packages('pacman')
 pacman::p_load(package_list, character.only = TRUE)
 
 
 # ------------------------------------------------
 # data prep
 # ------------------------------------------------
-library('tidyverse')
+library('dplyr')
 library('here')
 
 # from https://www.kaggle.com/c/costa-rican-household-poverty-prediction/data?select=codebook.csv

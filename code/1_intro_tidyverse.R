@@ -1,7 +1,7 @@
 # ------------------------------------------------
 # Load packages and data prep
 # ------------------------------------------------
-library('tidyverse')
+library('dplyr')
 
 source('code/0_data_prep.r')
 

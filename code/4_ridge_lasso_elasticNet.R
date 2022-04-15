@@ -1,8 +1,7 @@
 # ------------------------------------------------
 # load packages and data
 # ------------------------------------------------
-library('tidyverse')
-library('tidymodels')
+library('dplyr')
 library('rsample')
 # install.packages(packages)
 
@@ -58,6 +57,9 @@ coefpath(lasso_mod)
 
 # 1. Using Labda.1se penalization, which variables are shrunk to zero?
 
+  
+  coef(lasso_mod, s = lasso_mod$lambda.1se) %>% as.matrix() %>% as.data.frame() %>% 
+  filter(s1 != 0)
 
 # ------------------------------------------------
 # Estimate ElasticNet Model from data
