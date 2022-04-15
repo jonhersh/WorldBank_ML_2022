@@ -39,6 +39,7 @@ If you would like to install and run R locally please install the following prog
 
 * RStudio Desktop 2022.02.1 Build 461 [link](https://www.rstudio.com/products/rstudio/download/#download)
 * R 4.1.3 [link](https://cran.r-project.org/bin/windows/base/)
+* RTools https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html
 
 ### Running R in a Web Browser
 
